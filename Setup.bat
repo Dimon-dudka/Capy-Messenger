@@ -47,6 +47,7 @@ echo === Found !conan_version! ===
 
 echo === Installing dependencies ===
 conan install . --build=missing
+conan install . -s build_type=Debug --build=missing
 
 echo === Configuring CMake ===
 cmake -S . -B build -DCMAKE_TOOLCHAIN_FILE=Third-Party/conan_toolchain.cmake -DCMAKE_C_COMPILER=cl -DCMAKE_CXX_COMPILER=cl

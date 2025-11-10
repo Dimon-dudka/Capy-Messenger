@@ -1,12 +1,22 @@
+#include "gmock/gmock.h"
+#include "gtest/gtest.h"
 #include "nlohmann/json.hpp"
 #include <iostream>
 
-int main()
+TEST(TestGroupName, Subtest_1)
 {
-	std::cout << "Hello, World!" << std::endl;
+	ASSERT_TRUE(1 == 1);
+}
 
-	nlohmann::json j;
-	std::cout << j.size();
+TEST(TestGroupName, Subtest_2)
+{
+	ASSERT_FALSE('b' == 'b');
+	std::cout << "continue test after failure" << std::endl;
+}
 
-	return 0;
+int main(int argc, char** argv)
+{
+	testing::InitGoogleTest(&argc, argv);
+
+	return RUN_ALL_TESTS();
 }

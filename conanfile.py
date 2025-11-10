@@ -1,5 +1,6 @@
 from conan import ConanFile
 
+
 class CapyMessenger(ConanFile):
     name = "CapyMessenger"
     settings = ("os", "compiler", "build_type", "arch")
@@ -7,6 +8,7 @@ class CapyMessenger(ConanFile):
 
     def requirements(self):
         self.requires("nlohmann_json/3.12.0")
+        self.requires("gtest/1.17.0")
 
     def layout(self):
         self.folders.build = "build"
