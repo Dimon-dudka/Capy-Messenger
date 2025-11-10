@@ -43,4 +43,6 @@
 
 # Paths
 **/.idea/**
-**/cmake-build-debug/**
+**/cmake-build**
+/Third-Party/**
+/build/**
