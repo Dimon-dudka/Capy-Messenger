@@ -46,3 +46,6 @@
 **/cmake-build**
 /Third-Party/**
 /build/**
+
+# Files
+CMakeUserPresets.json
