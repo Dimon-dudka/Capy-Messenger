@@ -1,22 +1,10 @@
-#include "gmock/gmock.h"
-#include "gtest/gtest.h"
-#include "nlohmann/json.hpp"
+#include "TestLayout/TestClass.h"
 #include <iostream>
-
-TEST(TestGroupName, Subtest_1)
-{
-	ASSERT_TRUE(1 == 1);
-}
-
-TEST(TestGroupName, Subtest_2)
-{
-	ASSERT_FALSE('b' == 'b');
-	std::cout << "continue test after failure" << std::endl;
-}
 
 int main(int argc, char** argv)
 {
-	testing::InitGoogleTest(&argc, argv);
 
-	return RUN_ALL_TESTS();
+	TestClass testClass;
+	std::cout << testClass.Get();
+	return 0;
 }
