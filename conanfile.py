@@ -12,4 +12,3 @@ class CapyMessenger(ConanFile):
 
     def layout(self):
         self.folders.build = "build"
-        self.folders.generators = "Third-Party"
