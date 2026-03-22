@@ -1,4 +1,4 @@
-# Copyright 2025 Dudka Studio
+# Copyright 2026 Dudka Studio
 import os
 from .core_utils import *
 from .git_usage import GitWorker

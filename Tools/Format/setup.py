@@ -1,4 +1,4 @@
-# Copyright 2025 Dudka Studio
+# Copyright 2026 Dudka Studio
 from .requirements_worker import RequirementsWorker
 
 

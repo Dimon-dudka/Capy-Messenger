@@ -1,3 +1,4 @@
+// Copyright 2026 Dudka Studio
 #include <gtest/gtest.h>
 
 TEST(MyTests, simpleCheck)

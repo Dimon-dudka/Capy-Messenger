@@ -1,4 +1,4 @@
-# Copyright 2025 Dudka Studio
+# Copyright 2026 Dudka Studio
 import subprocess
 from enum import Enum
 from subprocess import CompletedProcess

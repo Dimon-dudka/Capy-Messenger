@@ -1,3 +1,4 @@
+# Copyright 2026 Dudka Studio
 from conan import ConanFile
 
 

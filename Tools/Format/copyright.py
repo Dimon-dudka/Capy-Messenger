@@ -1,4 +1,4 @@
-# Copyright 2025 Dudka Studio
+# Copyright 2026 Dudka Studio
 import os
 import re
 from typing import List
@@ -6,22 +6,39 @@ from enum import Enum
 from .core_utils import CoreLog
 from .git_usage import GitWorker
 
-COPYRIGHT_LINE = "Copyright 2025 Dudka Studio"
+COPYRIGHT_LINE = "Copyright 2026 Dudka Studio"
 
 
 class FileTypes(Enum):
     PYTHON = 0
+    CPP_SOURCE = 1
+    CPP_HEADER = 2
 
 
-ALLOWED_FILE_EXTENSIONS = {FileTypes.PYTHON: "py"}
+ALLOWED_FILE_EXTENSIONS = {FileTypes.PYTHON: "py",
+                           FileTypes.CPP_SOURCE: "cpp",
+                           FileTypes.CPP_HEADER: "h",
+                           }
 
-EXTENSION_PER_TYPE = {"py": FileTypes.PYTHON}
+EXTENSION_PER_TYPE = {"py": FileTypes.PYTHON,
+                      "cpp": FileTypes.CPP_SOURCE,
+                      "h": FileTypes.CPP_HEADER,
+                      }
 
-LANGUAGE_COMMENTS_FORMAT = {"py": r"#.*$"}
+LANGUAGE_COMMENTS_FORMAT = {"py": r"#.*$",
+                            "cpp": r"//.*$",
+                            "h": r"//.*$",
+                            }
 
-LANGUAGE_COPYRIGHT_LINE = {"py": f"# {COPYRIGHT_LINE}\n"}
+LANGUAGE_COPYRIGHT_LINE = {"py": f"# {COPYRIGHT_LINE}\n",
+                           "cpp": f"// {COPYRIGHT_LINE}\n",
+                           "h": f"// {COPYRIGHT_LINE}\n",
+                           }
 
-COPYRIGHT_PATTERNS = {FileTypes.PYTHON: r"# " + re.escape(COPYRIGHT_LINE) + r"$"}
+COPYRIGHT_PATTERNS = {FileTypes.PYTHON: r"# " + re.escape(COPYRIGHT_LINE) + r"$",
+                      FileTypes.CPP_SOURCE: r"// " + re.escape(COPYRIGHT_LINE) + r"$",
+                      FileTypes.CPP_HEADER: r"// " + re.escape(COPYRIGHT_LINE) + r"$",
+                      }
 
 
 class CopyrightChecker:
