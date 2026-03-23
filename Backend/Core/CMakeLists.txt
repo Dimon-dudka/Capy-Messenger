@@ -1,0 +1,30 @@
+SET(BACKEND_CORE_LIB_NAME "backend_core_lib")
+
+#------------------------------------------------------
+# nlohmann include
+#------------------------------------------------------
+find_package(nlohmann_json REQUIRED)
+if (nlohmann_json_FOUND)
+    message(STATUS "nlohmann found")
+else ()
+    message(FATAL_ERROR "nlohmann was not found")
+endif ()
+#------------------------------------------------------
+
+add_library(${BACKEND_CORE_LIB_NAME} OBJECT
+        Ports/Secondary/Logger/MessageTypes/BaseLoggerMessage.h
+        Ports/Secondary/Logger/MessageTypes/TechLogMessage.cpp
+        Ports/Secondary/Logger/MessageTypes/TechLogMessage.h
+        Ports/Secondary/Logger/MessageTypes/BaseLoggerMessage.cpp
+)
+
+target_link_libraries(${BACKEND_CORE_LIB_NAME}
+        PRIVATE
+        nlohmann_json::nlohmann_json
+)
+
+target_include_directories(${BACKEND_CORE_LIB_NAME}
+        PUBLIC
+        ${CMAKE_CURRENT_SOURCE_DIR}
+        ${nlohmann_json_INCLUDE_DIRS}
+)

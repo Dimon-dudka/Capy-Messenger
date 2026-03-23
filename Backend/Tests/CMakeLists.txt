@@ -7,11 +7,13 @@ endif ()
 
 add_executable(backend_tests
         test_main.cpp
+        Core/Ports/Secondary/Logger/LoggerMessageTestsClass.cpp
+        Core/Ports/Secondary/Logger/LoggerMessageTestsClass.h
 )
 
 target_link_libraries(backend_tests
         PRIVATE
-        backend_lib
+        backend_core_lib
         GTest::gtest
         GTest::gtest_main
 )
