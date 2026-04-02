@@ -4,9 +4,12 @@ project(Backend)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-option(ENABLE_TESTS "Enable tests" ON)
+# Project build variables
+set(CMAKE_BUILD_LOG_PREFIX "[${PROJECT_NAME}]")
+set(ENABLE_TESTS TRUE)
 
 if (ENABLE_TESTS)
+    message(DEBUG "${CMAKE_BUILD_LOG_PREFIX} ENABLE_TESTS = ${ENABLE_TESTS}, using testing environment")
     add_compile_definitions(ENABLE_TESTS)
 endif ()
 
