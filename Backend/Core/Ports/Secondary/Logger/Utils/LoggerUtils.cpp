@@ -1,5 +1,8 @@
-#include "BaseLoggerMessage.h"
+// Copyright 2026 Dudka Studio
 
+#include "LoggerUtils.h"
+#include <sstream>
+#include <iomanip>
 
 std::tm BaseLogMessageHelpers::TimeHelpers::ConvertToUTCTime(const std::time_t& InTime){
 	std::tm utcTimeStruct = {};
@@ -20,12 +23,7 @@ std::string BaseLogMessageHelpers::TimeHelpers::ConvertToString(const std::time_
 	std::ostringstream formattedTime;
 	formattedTime << std::put_time(
 		&utcTimeStruct,
-		InDateTimePattern ? InDateTimePattern : "%Y-%m-%d %H:%M:%S"
-	);
+		InDateTimePattern ? InDateTimePattern : "%Y-%m-%d %H:%M:%S");
 
 	return formattedTime.str();
-}
-
-std::time_t IBaseLoggerMessage::GetTime() const{
-	return CreationTime;
 }

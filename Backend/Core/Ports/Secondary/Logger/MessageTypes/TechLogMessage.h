@@ -1,8 +1,7 @@
 // Copyright 2026 Dudka Studio
 #pragma once
 
-#include "BaseLoggerMessage.h"
-
+#include "Logger/Interfaces/BaseLoggerMessage.h"
 
 namespace TechLog
 {

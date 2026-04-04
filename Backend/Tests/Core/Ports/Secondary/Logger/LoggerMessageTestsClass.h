@@ -1,8 +1,9 @@
 // Copyright 2026 Dudka Studio
 #pragma once
 
-#include "Ports/Secondary/Logger/MessageTypes/BaseLoggerMessage.h"
-#include "Ports/Secondary/Logger/MessageTypes/TechLogMessage.h"
+#include "Logger/Interfaces/BaseLoggerMessage.h"
+#include "Logger/MessageTypes/TechLogMessage.h"
+#include "Logger/Utils/LoggerUtils.h"
 #include <gtest/gtest.h>
 
 namespace TimeTestHelpers
