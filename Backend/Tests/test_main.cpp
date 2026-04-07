@@ -1,11 +1,6 @@
 // Copyright 2026 Dudka Studio
 #include <gtest/gtest.h>
 
-TEST(MyTests, simpleCheck)
-{
-	EXPECT_EQ(2 + 2, 4);
-	std::cout << "Hello Tests!" << std::endl;
-}
 
 int main(int argc, char** argv)
 {
